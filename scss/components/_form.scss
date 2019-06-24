@@ -1,0 +1,97 @@
+form {
+  flex: 1 1 calc(100%);
+  width: calc(100%);
+  display: flex;
+  max-width: 800px;
+  flex-wrap: wrap;
+  transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+  min-height: 100%;
+  align-content: safe center;
+
+  &.hidden {
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+  }
+}
+
+select,
+textarea,
+input[type="number"],
+input[type="text"],
+input[type="email"] {
+  padding: 15px;
+  margin-bottom: 25px;
+  border: 1px solid transparent;
+  background-color: lighten($color-primary, 20);
+  transition: all .3s ease-in-out;
+  border-radius: 3px;
+  width: 100%;
+  max-width: 100%;
+  font-size: 16px;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+
+  &:focus {
+    border: 1px solid white;
+    box-shadow: 0 2px 15px rgba(black, .17);
+  }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: none;
+}
+
+.form-item {
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  transition: all .3s cubic-bezier(.2,.1,.29,.98);
+  max-height: 160px;
+  margin: 0 20px;
+  transform: translate(0, 0);
+  justify-content: flex-end;
+
+  > .form-item {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  &:first-child {
+    margin-top: 20px;
+  }
+
+  &.hidden {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translate(-40px, -5px);
+  }
+}
+
+.field-label {
+  margin-bottom: 10px;
+  padding: 3px;
+  color: rgba(black, .5);
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: -2px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.form-item-radio,
+.form-item-checkbox,
+.form-item-radios,
+.form-item-checkboxes {
+  margin-bottom: 30px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: nowrap;
+  flex: 1 1 auto;
+}
